@@ -1,5 +1,22 @@
 #!/bin/bash
 
+PROFILE_MANAGER=false
+PRIVATE=false
+
+# Parse flags
+while [[ "$1" == -* ]]; do
+  case "$1" in
+  --ProfileManager)
+    PROFILE_MANAGER=true
+    shift
+    ;;
+  --private-window)
+    PRIVATE=true
+    shift
+    ;;
+  *) shift ;;
+  esac
+done
 URL="$1"
 
 # Only allow https and localhost
@@ -26,7 +43,7 @@ case "$URL" in
 *store.steampowered.com* | *discord.com*)
   CONTAINER="Gaming"
   ;;
-*amazon.de*)
+*amazon.de* | *otto.de*)
   CONTAINER="Shopping"
   ;;
 *)
@@ -35,4 +52,8 @@ case "$URL" in
   ;;
 esac
 
-zen-twilight "ext+container:name=$CONTAINER&url=$URL"
+ARGS=()
+[[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
+[[ "$PRIVATE" == true ]] && ARGS+=(--private-window)
+
+zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
