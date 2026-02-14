@@ -42,7 +42,7 @@ case "$URL" in
 *youtube.com* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
   CONTAINER="Personal"
   ;;
-*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *proton.me*)
+*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md*)
   CONTAINER="Work"
   ;;
 *datev.de* | *app.revolut.com* | *ing.de*)
