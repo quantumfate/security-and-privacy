@@ -1,8 +1,6 @@
 #!/bin/bash
-
 PROFILE_MANAGER=false
 PRIVATE=false
-
 # Parse flags
 while [[ "$1" == -* ]]; do
   case "$1" in
@@ -18,7 +16,6 @@ while [[ "$1" == -* ]]; do
   esac
 done
 URL="$1"
-
 # Only allow https and localhost
 case "$URL" in
 https://*) ;;
@@ -29,15 +26,28 @@ http://localhost* | http://127.0.0.1* | http://\[::1\]*) ;;
   ;;
 esac
 
+# Build args
+ARGS=()
+[[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
+[[ "$PRIVATE" == true ]] && ARGS+=(--private-window)
+
 # Bypass container routing for certain domains
 case "$URL" in
 *proton.me*)
-  zen-browser "${ARGS[@]}" "$URL"
+  zen-twilight "${ARGS[@]}" "$URL"
   exit 0
   ;;
 esac
 
-# Define domain → container/profile mappings
+# Profile-based routing (full isolation)
+case "$URL" in
+*dofus.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
+  zen-twilight "${ARGS[@]}" -P "Dofus" "$URL"
+  exit 0
+  ;;
+esac
+
+# Define domain → container mappings
 case "$URL" in
 *youtube.com* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
   CONTAINER="Personal"
@@ -59,9 +69,5 @@ case "$URL" in
   exit 0
   ;;
 esac
-
-ARGS=()
-[[ "$PROFILE_MANAGER" == true ]] && ARGS+=(--ProfileManager)
-[[ "$PRIVATE" == true ]] && ARGS+=(--private-window)
 
 zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
