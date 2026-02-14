@@ -29,6 +29,14 @@ http://localhost* | http://127.0.0.1* | http://\[::1\]*) ;;
   ;;
 esac
 
+# Bypass container routing for certain domains
+case "$URL" in
+*proton.me*)
+  zen-browser "${ARGS[@]}" "$URL"
+  exit 0
+  ;;
+esac
+
 # Define domain → container/profile mappings
 case "$URL" in
 *youtube.com* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
