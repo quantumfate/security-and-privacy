@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Zen Dispatcher
+Exec=/home/quantum/.local/share/own-scripts/zen-dispatcher.sh %u
+Type=Application
+MimeType=x-scheme-handler/http;x-scheme-handler/https;
+NoDisplay=true
