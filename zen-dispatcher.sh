@@ -49,7 +49,7 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
-*youtube.com* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
+*youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
   CONTAINER="Personal"
   ;;
 *claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md*)
