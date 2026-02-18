@@ -49,16 +49,16 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
-*youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com*)
+*youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com*)
+  CONTAINER="Social Media"
+  ;;
+*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *hypr.land*)
+  CONTAINER="Productivity"
+  ;;
+*datev.de* | *app.revolut.com* | *ing.de* | *app.hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
   ;;
-*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md*)
-  CONTAINER="Work"
-  ;;
-*datev.de* | *app.revolut.com* | *ing.de*)
-  CONTAINER="Finance"
-  ;;
-*store.steampowered.com* | *discord.com*)
+*store.steampowered.com*)
   CONTAINER="Gaming"
   ;;
 *amazon.de* | *otto.de*)
