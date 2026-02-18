@@ -55,7 +55,7 @@ case "$URL" in
 *claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | *hypr.land*)
   CONTAINER="Productivity"
   ;;
-*datev.de* | *app.revolut.com* | *ing.de* | *app.hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
+*datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
   ;;
 *store.steampowered.com*)
