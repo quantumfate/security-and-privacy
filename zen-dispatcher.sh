@@ -41,7 +41,7 @@ esac
 
 # Profile-based routing (full isolation)
 case "$URL" in
-*dofus.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
+*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
   zen-twilight "${ARGS[@]}" -P "Dofus" "$URL"
   exit 0
   ;;
