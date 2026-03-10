@@ -34,7 +34,7 @@ ARGS=()
 # Bypass container routing for certain domains
 case "$URL" in
 *proton.me*)
-  zen-twilight "${ARGS[@]}" "$URL"
+  uwsm-app -- zen-twilight "${ARGS[@]}" "$URL"
   exit 0
   ;;
 esac
@@ -42,7 +42,7 @@ esac
 # Profile-based routing (full isolation)
 case "$URL" in
 *dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
-  zen-twilight "${ARGS[@]}" -P "Dofus" "$URL"
+  uwsm-app -- zen-twilight "${ARGS[@]}" -P "Dofus" "$URL"
   exit 0
   ;;
 esac
@@ -70,4 +70,4 @@ case "$URL" in
   ;;
 esac
 
-zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
+uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
