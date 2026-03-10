@@ -1,14 +1,10 @@
 [Desktop Entry]
-Type=Application
-MimeType=x-scheme-handler/http;x-scheme-handler/https;
-NoDisplay=true
-
-[Desktop Entry]
 Name=Zen Dispatcher
 Comment=Experience tranquillity while browsing the web without people tracking you!
-Exec=/home/quantum/.local/share/own-scripts/security-and-privacy/zen-dispatcher.sh %u
+Exec=/home/quantum/.local/share/own-scripts/gitlab/quantumfate/security-and-privacy/zen-dispatcher.sh %u
 Icon=zen-twilight
 Type=Application
+NoDisplay=true
 MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
 StartupWMClass=zen-twilight
 Categories=Network;WebBrowser;
