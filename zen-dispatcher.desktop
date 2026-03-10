@@ -20,7 +20,7 @@ Actions=new-window;new-private-window;profilemanager;
 
 [Desktop Action new-window]
 Name=Open a New Window
-Exec=/opt/zen-twilight-bin/zen-bin %u
+Exec=/home/quantum/.local/share/own-scripts/security-and-privacy/zen-dispatcher.sh %u
 
 [Desktop Action new-private-window]
 Name=Open a New Private Window
