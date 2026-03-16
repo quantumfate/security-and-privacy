@@ -52,8 +52,11 @@ case "$URL" in
 *youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
   CONTAINER="Social Media"
   ;;
-*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | *hypr.land*)
+*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net*)
   CONTAINER="Productivity"
+  ;;
+*docker.com* | *hypr.land* | *archlinux.org* | *debian.org*)
+  CONTAINER="Tech Documentation"
   ;;
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
