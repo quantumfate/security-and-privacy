@@ -19,7 +19,7 @@ URL="$1"
 # Only allow https and localhost
 case "$URL" in
 https://*) ;;
-http://localhost* | http://127.0.0.1* | http://\[::1\]*) ;;
+http://localhost* | http://\[::1\]*) ;;
 *)
   notify-send "Zen Dispatcher" "Blocked non-HTTPS URL: $URL"
   exit 1
@@ -52,7 +52,7 @@ case "$URL" in
 *youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
   CONTAINER="Social Media"
   ;;
-*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net*)
+*claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | http*://127.0.0.1* | localhost*)
   CONTAINER="Productivity"
   ;;
 *docker.com* | *hypr.land* | *archlinux.org* | *debian.org*)
