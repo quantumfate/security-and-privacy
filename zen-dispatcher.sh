@@ -42,7 +42,7 @@ esac
 # Profile-based routing (full isolation)
 case "$URL" in
 *dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
-  uwsm-app -- zen-twilight "${ARGS[@]}" -P "Dofus" "$URL"
+  uwsm-app -- zen-twilight "${ARGS[@]}" -P "Dofus" --name zen-twilight-dofus "$URL"
   exit 0
   ;;
 esac
