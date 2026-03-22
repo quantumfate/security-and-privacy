@@ -39,19 +39,8 @@ case "$URL" in
   ;;
 esac
 
-# Profile-based routing (full isolation)
-case "$URL" in
-*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
-  uwsm-app -- zen-twilight "${ARGS[@]}" -P "Dofus" --name zen-twilight-dofus "$URL"
-  exit 0
-  ;;
-esac
-
 # Define domain → container mappings
 case "$URL" in
-*youtube.com* | *youtu.be* | *reddit.com* | *twitch.tv* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
-  CONTAINER="Social Media"
-  ;;
 *claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | http*://127.0.0.1* | localhost*)
   CONTAINER="Productivity"
   ;;
@@ -61,10 +50,24 @@ case "$URL" in
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
   ;;
+*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
+  ARGS+=("-P Media")
+  ARGS+=("--name zen-twilight-media")
+  CONTAINER="Dofus"
+  ;;
+*twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
+  ARGS+=("-P Media")
+  ARGS+=("--name zen-twilight-media")
+  CONTAINER="Social Media"
+  ;;
 *store.steampowered.com*)
+  ARGS+=("-P Media")
+  ARGS+=("--name zen-twilight-media")
   CONTAINER="Gaming"
   ;;
 *amazon.de* | *otto.de*)
+  ARGS+=("-P Media")
+  ARGS+=("--name zen-twilight-media")
   CONTAINER="Shopping"
   ;;
 *)
