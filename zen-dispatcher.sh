@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 PROFILE_MANAGER=false
 PRIVATE=false
 # Parse flags
@@ -51,23 +51,19 @@ case "$URL" in
   CONTAINER="Personal"
   ;;
 *dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
-  ARGS+=("-P Media")
-  ARGS+=("--name zen-twilight-media")
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Dofus"
   ;;
 *twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
-  ARGS+=("-P Media")
-  ARGS+=("--name zen-twilight-media")
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Social Media"
   ;;
 *store.steampowered.com*)
-  ARGS+=("-P Media")
-  ARGS+=("--name zen-twilight-media")
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Gaming"
   ;;
 *amazon.de* | *otto.de*)
-  ARGS+=("-P Media")
-  ARGS+=("--name zen-twilight-media")
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Shopping"
   ;;
 *)
