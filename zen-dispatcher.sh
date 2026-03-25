@@ -41,6 +41,10 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
+*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
+  CONTAINER="Dofus"
+  ;;
 *claude.ai* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | http*://127.0.0.1* | localhost*)
   CONTAINER="Productivity"
   ;;
@@ -49,10 +53,6 @@ case "$URL" in
   ;;
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
-  ;;
-*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com*)
-  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
-  CONTAINER="Dofus"
   ;;
 *twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
@@ -71,5 +71,7 @@ case "$URL" in
   exit 0
   ;;
 esac
+# URL-encode the target URL
+ENCODED_URL=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$URL")
 
-uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$URL"
+uwsm-app -- zen-twilight "${ARGS[@]}" "ext+container:name=$CONTAINER&url=$ENCODED_URL"
