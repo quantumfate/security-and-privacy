@@ -54,10 +54,15 @@ case "$URL" in
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
   ;;
-*twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *myanimelist.net* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
+*twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Social Media"
   ;;
+*myanimelist.net*)
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
+  CONTAINER="Anime"
+  ;;
+
 *store.steampowered.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Gaming"
