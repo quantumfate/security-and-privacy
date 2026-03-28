@@ -41,7 +41,7 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
-*dofus.com* | *d-bk.net* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
+*dofus.com* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Dofus"
   ;;
