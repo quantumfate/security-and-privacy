@@ -41,7 +41,7 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
-*dofus.com* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
+*dofus.com* | *dofusbook.net* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Dofus"
   ;;
@@ -54,11 +54,11 @@ case "$URL" in
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
   ;;
-*twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *crunchyroll.com* | *discord.com* | *x.com* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
+*twitch.tv* | *youtube.com* | *youtu.be* | *reddit.com* | *discord.com* | *x.com* | *instagram.com* | *tinder.com* | *spotify.com* | *discordapp.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Social Media"
   ;;
-*myanimelist.net*)
+*myanimelist.net* | *crunchyroll.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Anime"
   ;;
