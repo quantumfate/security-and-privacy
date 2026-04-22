@@ -58,7 +58,7 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Social Media"
   ;;
-*myanimelist.net* | *crunchyroll.com*)
+*myanimelist.net* | *crunchyroll.com* | *animeschedule.net*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Anime"
   ;;
