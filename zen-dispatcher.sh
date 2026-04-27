@@ -45,11 +45,14 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Dofus"
   ;;
-*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *boot.dev* | *sendgrid.net* | http*://127.0.0.1* | localhost* | *readyforlinux.com*)
+*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | http*://127.0.0.1* | localhost* | *readyforlinux.com*)
   CONTAINER="Productivity"
   ;;
 *docker.com* | *hypr.land* | *archlinux.org* | *debian.org*)
   CONTAINER="Tech Documentation"
+  ;;
+*boot.dev* | *mit.edu*)
+  CONTAINER="Studying"
   ;;
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
   CONTAINER="Personal"
