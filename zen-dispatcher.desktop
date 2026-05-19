@@ -16,12 +16,12 @@ Actions=new-window;new-private-window;profilemanager;
 
 [Desktop Action new-window]
 Name=Open a New Window
-Exec=/home/quantum/.local/share/own-scripts/gitlab/quantumfate/security-and-privacy/zen-dispatcher.sh %u
+Exec=,zen-dispatcher.sh %u
 
 [Desktop Action new-private-window]
 Name=Open a New Private Window
-Exec=/home/quantum/.local/share/own-scripts/gitlab/quantumfate/security-and-privacy/zen-dispatcher.sh --private-window %u
+Exec=,zen-dispatcher.sh --private-window %u
 
 [Desktop Action profilemanager]
 Name=Open the Profile Manager
-Exec=/home/quantum/.local/share/own-scripts/gitlab/quantumfate/security-and-privacy/zen-dispatcher.sh --ProfileManager %u
+Exec=,zen-dispatcher.sh --ProfileManager %u

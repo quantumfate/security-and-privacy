@@ -43,7 +43,7 @@ esac
 case "$URL" in
 *dofus.com* | *dofusbook.net* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
-  CONTAINER="Dofus"
+  CONTAINER="Gaming"
   ;;
 *claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | http*://127.0.0.1* | localhost* | *readyforlinux.com*)
   CONTAINER="Productivity"
@@ -65,7 +65,6 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Anime"
   ;;
-
 *store.steampowered.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Gaming"
