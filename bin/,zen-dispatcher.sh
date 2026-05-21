@@ -37,6 +37,10 @@ case "$URL" in
   uwsm-app -- zen-twilight "${ARGS[@]}" "$URL"
   exit 0
   ;;
+http*://127.0.0.1* | localhost*)
+  uwsm-app -- firefox-developer-edition
+  exit 0
+  ;;
 esac
 
 # Define domain → container mappings
@@ -45,7 +49,7 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Gaming"
   ;;
-*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | http*://127.0.0.1* | localhost* | *readyforlinux.com*)
+*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com*)
   CONTAINER="Productivity"
   ;;
 *docker.com* | *hypr.land* | *archlinux.org* | *debian.org*)
