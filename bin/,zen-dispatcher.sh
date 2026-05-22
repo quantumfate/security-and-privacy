@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+notify-send "Zen Dispatcher" "Does this work"
 PROFILE_MANAGER=false
 PRIVATE=false
 # Parse flags
@@ -45,8 +47,8 @@ esac
 
 # Define domain → container mappings
 case "$URL" in
-*dofus.com* | *dofusbook.net* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
-  ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
+*dofus.com* | *dofusbook.net* | *d-bk.net* | *dofensive.com* | *dofusdb.fr* | *barbofus.com* | *auth.ankama.com* | *ankama.com* | *dofuspourlesnoobs.com* | *dofuswiki.fandom.com* | http*://127.0.0.1*9001* | *ankama*localhost*)
+  ARGS+=("-P" "Media" "--name" "zen-twilight-media")
   CONTAINER="Gaming"
   ;;
 *claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com*)
