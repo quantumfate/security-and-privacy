@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Zen Dispatcher
 Comment=Experience tranquillity while browsing the web without people tracking you!
-Exec=/home/quantum/.local/share/own-scripts/gitlab/quantumfate/security-and-privacy/zen-dispatcher.sh %u
+Exec=,zen-dispatcher.sh %u
 Icon=zen-twilight
 Type=Application
 NoDisplay=true
