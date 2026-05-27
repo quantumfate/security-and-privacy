@@ -21,7 +21,7 @@ URL="$1"
 # Only allow https and localhost
 case "$URL" in
 https://*) ;;
-http://localhost* | http://\[::1\]*) ;;
+http://localhost* | http://127.0.0.1* | http://\[::1\]*) ;;
 *)
   notify-send "Zen Dispatcher" "Blocked non-HTTPS URL: $URL"
   exit 1
@@ -39,8 +39,11 @@ case "$URL" in
   uwsm-app -- zen-twilight "${ARGS[@]}" "$URL"
   exit 0
   ;;
-http*://127.0.0.1* | localhost*)
-  uwsm-app -- firefox-developer-edition
+# Ankama OAuth callback port → fall through to Gaming/Media mapping below
+http://127.0.0.1:9001* | https://127.0.0.1:9001*) ;;
+# Real local dev servers → firefox dev edition (anchored to host, not embedded redirect_uri)
+http://127.0.0.1* | https://127.0.0.1* | http://localhost* | https://localhost* | http://\[::1\]* | https://\[::1\]*)
+  uwsm-app -- firefox-developer-edition "$URL"
   exit 0
   ;;
 esac
