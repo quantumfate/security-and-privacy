@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-notify-send "Zen Dispatcher" "Does this work"
 PROFILE_MANAGER=false
 PRIVATE=false
 # Parse flags
@@ -20,10 +19,9 @@ done
 URL="$1"
 # Only allow https and localhost
 case "$URL" in
-https://*) ;;
-http://localhost* | http://127.0.0.1* | http://\[::1\]*) ;;
+https://* | *http://*) ;;
 *)
-  notify-send "Zen Dispatcher" "Blocked non-HTTPS URL: $URL"
+  notify-send "Zen Dispatcher" "URL Pattern not allowed: $URL"
   exit 1
   ;;
 esac
@@ -57,7 +55,7 @@ case "$URL" in
 *claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com*)
   CONTAINER="Productivity"
   ;;
-*docker.com* | *hypr.land* | *archlinux.org* | *debian.org*)
+*docker.com* | *hypr.land* | *archlinux.org* | *debian.org* | *lua.org*)
   CONTAINER="Tech Documentation"
   ;;
 *boot.dev* | *mit.edu*)
