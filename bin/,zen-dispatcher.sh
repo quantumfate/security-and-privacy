@@ -17,7 +17,7 @@ while [[ "$1" == -* ]]; do
   esac
 done
 URL="$1"
-# Only allow https and localhost
+
 case "$URL" in
 https://* | *http://*) ;;
 *)
