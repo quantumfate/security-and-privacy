@@ -55,7 +55,7 @@ case "$URL" in
 *claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com*)
   CONTAINER="Productivity"
   ;;
-*docker.com* | *hypr.land* | *archlinux.org* | *debian.org* | *lua.org*)
+*docker.com* | *hypr.land* | *archlinux.org* | *debian.org* | *lua.org* | *neovim.io*)
   CONTAINER="Tech Documentation"
   ;;
 *boot.dev* | *mit.edu*)
