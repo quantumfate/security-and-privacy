@@ -72,7 +72,7 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Anime"
   ;;
-*store.steampowered.com* | *elderscrollsonline.com* | *esologs.com*)
+*store.steampowered.com* | *elderscrollsonline.com* | *esologs.com* | *esoserverstatus.net* | *eso-hub.com*)
   ARGS+=("-P" "Media" "--name" "zen-twilight-media" "--no-remote")
   CONTAINER="Gaming"
   ;;
