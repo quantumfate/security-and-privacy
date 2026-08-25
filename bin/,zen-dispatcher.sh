@@ -52,13 +52,10 @@ case "$URL" in
   ARGS+=("-P" "Media" "--name" "zen-twilight-media")
   CONTAINER="Gaming"
   ;;
-*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com*)
+*claude.ai* | *codeberg.org* | *github.com* | *gitlab.com* | *stackoverflow.com* | *obsidian.md* | *linkedin.com* | *sendgrid.net* | *readyforlinux.com* | *docker.com* | *hypr.land* | *archlinux.org* | *debian.org* | *lua.org* | *neovim.io* | *boot.dev*)
   CONTAINER="Productivity"
   ;;
-*docker.com* | *hypr.land* | *archlinux.org* | *debian.org* | *lua.org* | *neovim.io*)
-  CONTAINER="Tech Documentation"
-  ;;
-*boot.dev* | *mit.edu*)
+*mit.edu*)
   CONTAINER="Studying"
   ;;
 *datev.de* | *revolut.com* | *ing.de* | *hushed.com* | *paypal.com* | *skrill.com* | *doctolib.de*)
